@@ -117,9 +117,9 @@ class Converter:
             try:
                 initial_amount = float(input("Type in an amount:\n"))
                 aux_currency = float(initial_amount) / float(
-                    self.myrates.loc[self.myrates['currency symbol'] == str(from_currency), 'exchange rate to 1 Euro'].iloc[0])
+                    self.myrates.loc[self.myrates['currency symbol'] == str(from_currency), 'exchange rate for 1 Euro'].iloc[0])
                 end_amount = round(aux_currency * float(
-                    self.myrates.loc[self.myrates['currency symbol'] == str(to_currency), 'exchange rate to 1 Euro'].iloc[0]), 2)
+                    self.myrates.loc[self.myrates['currency symbol'] == str(to_currency), 'exchange rate for 1 Euro'].iloc[0]), 2)
                 result = str(initial_amount) + " " + from_currency.upper() + " = " + str(
                     end_amount) + " " + to_currency.upper()
                 break
